@@ -1,21 +1,25 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
-import ActionButton from './ActionButton';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {colors} from '../../util';
 
-const WelcomeHome = () => {
+
+const WelcomeHome = ({navigation}) => {
   return(
     <View style = {styles.wrapper.page}>
       <Image source = {require('../../assets/img/brand.png')} style = {styles.wrapper.brand}/>
       <Text style = {styles.text.welcome}>Selamat Datang di</Text>
       <Image source = {require('../../assets/img/logo.png')} style={styles.wrapper.logo}/>
-      <ActionButton title="Masuk"/>
+      <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.button.textNavigate}>Login</Text>
+      </TouchableOpacity>
       <View style = {styles.text.or}>
         <View style = {styles.text.line}></View>
         <Text style={styles.text.atau}>Atau</Text>
         <View style = {styles.text.line}></View>
       </View>
-      <ActionButton title="Daftar"/>
+      <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.button.textNavigate}>Daftar</Text>
+      </TouchableOpacity>
       <Text style={styles.text.copyright}>Copyright {'\u00A9'} GoUTama 2021 - All Right Reserved</Text>
     </View>
   );
@@ -27,7 +31,7 @@ const styles = {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: colors.white,
       },
     brand:{
       width: 300,
@@ -44,7 +48,7 @@ const styles = {
   text:{
     welcome:{
       fontSize:18, 
-      color: '#000000', 
+      color: colors.black, 
       opacity: 0.5,
       marginTop:70,
     },
@@ -56,7 +60,7 @@ const styles = {
     line:{
       height: 1,
       width: 100,
-      backgroundColor: '#000000',
+      backgroundColor: colors.black,
       opacity: 0.5,
     },
     atau:{
@@ -69,6 +73,22 @@ const styles = {
       opacity: 0.5,
       fontSize: 12,
     }
+  },
+  button:{
+    navigate:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 270,
+      height: 40,
+      borderRadius:50,
+      backgroundColor: colors.primary,
+      fontWeight: 'bold',
+    },
+    textNavigate:{
+      color: colors.white,
+      fontSize:15,
+      fontWeight: 'bold',
+    },
   },
 };
 
