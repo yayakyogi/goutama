@@ -3,6 +3,7 @@ import {View,Text,Image,FlatList, Animated, TouchableOpacity} from 'react-native
 import SlideItem from './slideItem';
 import Slider from './Slider';
 import Paginator from './paginator';
+import {colors} from '../../util';
 
 const Slide = ({navigation}) => {
     const [currenIndex, setCurrentIndex] = useState(0);
@@ -47,14 +48,14 @@ const styles = {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#ffffff',
+      backgroundColor: colors.white,
     },
   },
   text:{
     skip:{
       fontSize:18,
       textAlign: 'center',
-      color: '#ffffff',
+      color: colors.white,
     },
   },
   button:{
@@ -64,7 +65,7 @@ const styles = {
       width: 300,
       height: 50,
       borderRadius:50,
-      backgroundColor: '#1E3799',
+      backgroundColor: colors.primary,
       marginBottom: 30,
       fontWeight: 'bold',
     },

@@ -9,7 +9,7 @@ const Splash =  ({navigation}) => {
   });
   return(
       <View style = {styles.SplashScreen}>
-          <Image source = {require('../../assets/img/brand.png')} style = {styles.imgSplash}/>
+          <Image source = {require('../../assets/img/brand/brand.png')} style = {styles.imgSplash}/>
       </View>
   );
 };
