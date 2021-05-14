@@ -56,7 +56,8 @@ const Register = ({navigation}) => {
           />
         </SafeAreaView>
         {/* Button Register */}
-        <TouchableOpacity style={styles.groupLogin.buttonLogin}>
+        <TouchableOpacity style={styles.groupLogin.buttonLogin}
+          onPress={() => navigation.navigate('User')}>
           <Text style={styles.groupLogin.buttonText}>DAFTAR</Text>
         </TouchableOpacity>
 

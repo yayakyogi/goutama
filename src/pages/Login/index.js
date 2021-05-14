@@ -43,7 +43,8 @@ const Login = ({navigation}) => {
           />
         </SafeAreaView>
         {/* Button Login */}
-        <TouchableOpacity style={styles.groupLogin.buttonLogin}>
+        <TouchableOpacity style={styles.groupLogin.buttonLogin}
+          onPress={() => navigation.navigate('User')}>
           <Text style={styles.groupLogin.buttonText}>LOGIN</Text>
         </TouchableOpacity>
 
