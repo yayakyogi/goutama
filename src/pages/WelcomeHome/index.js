@@ -1,16 +1,19 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {colors} from '../../util';
+import {brand,logo} from '../../assets/img';
 
 const WelcomeHome = ({navigation}) => {
   return(
     <View style = {styles.wrapper.page}>
       {/* Images Brand */}
-      <Image source = {require('../../assets/img/brand/brand.png')} style = {styles.wrapper.brand}/>
+      {/* <Image source = {require('../../assets/img/brand/brand.png')} style = {styles.wrapper.brand}/> */}
+      <Image source = {brand} style = {styles.wrapper.brand}/>
       {/* Text */}
       <Text style = {styles.text.welcome}>Permudah semua aktivitas anda bersama</Text>
       {/* Images Nama Aplikasi */}
-      <Image source = {require('../../assets/img/brand/logo.png')} style={styles.wrapper.logo}/>
+      {/* <Image source = {require('../../assets/img/brand/logo.png')} style={styles.wrapper.logo}/> */}
+       <Image source = {logo} style = {styles.wrapper.logo}/>
       {/* Button untuk menuju halaman login */}
       <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Login')}>
         <Text style={styles.button.textNavigate}>Login</Text>

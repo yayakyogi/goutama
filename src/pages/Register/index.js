@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text, Image, TextInput, SafeAreaView, TouchableOpacity} from 'react-native';
 import {colors} from '../../util';
+import {logo,imgRegister,backButton} from '../../assets/img';
 
 const Register = ({navigation}) => {
   return(
@@ -11,18 +12,18 @@ const Register = ({navigation}) => {
         <TouchableOpacity style={styles.auth.btnBack} 
           onPress = {() => navigation.replace('WelcomeHome')}>
           <Image style={styles.auth.imgBack} 
-            source={require('../../assets/img/auth/back-button.png')}
+            source={backButton}
           />
         </TouchableOpacity>
 
         {/* Images Brand */}
         <Image style={styles.auth.logo} 
-          source={require('../../assets/img/brand/logo.png')}
+          source={logo}
         />
 
         {/* Images LOGIN */}
         <Image style={styles.auth.imgLogin} 
-          source = {require('../../assets/img/auth/img-register.png')}
+          source = {imgRegister}
         />
 
         {/* Form Input */}
@@ -54,7 +55,7 @@ const Register = ({navigation}) => {
             placeholder="Masukkan password anda"
           />
         </SafeAreaView>
-        {/* Button Login */}
+        {/* Button Register */}
         <TouchableOpacity style={styles.groupLogin.buttonLogin}>
           <Text style={styles.groupLogin.buttonText}>DAFTAR</Text>
         </TouchableOpacity>

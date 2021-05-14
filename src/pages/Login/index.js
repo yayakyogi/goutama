@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text, Image, TextInput, SafeAreaView, TouchableOpacity} from 'react-native';
 import {colors} from '../../util';
+import {logo,imgLogin,backButton} from '../../assets/img';
 
 const Login = ({navigation}) => {
   return(
@@ -11,18 +12,18 @@ const Login = ({navigation}) => {
         <TouchableOpacity style={styles.auth.btnBack} 
           onPress = {() => navigation.replace('WelcomeHome')}>
           <Image style={styles.auth.imgBack} 
-            source={require('../../assets/img/auth/back-button.png')}
+            source={backButton}
           />
         </TouchableOpacity>
 
         {/* Images Brand */}
         <Image style={styles.auth.logo} 
-          source={require('../../assets/img/brand/logo.png')}
+          source={logo}
         />
 
         {/* Images LOGIN */}
         <Image style={styles.auth.imgLogin} 
-          source = {require('../../assets/img/auth/img-login.png')}
+          source = {imgLogin}
         />
 
         {/* Form Input */}
