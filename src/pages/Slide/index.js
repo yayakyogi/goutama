@@ -36,7 +36,7 @@ const Slide = ({navigation}) => {
 
           <Paginator data={Slider} scrollX={scrollX}/>
           <TouchableOpacity style = {styles.button.skip} onPress={() => navigation.replace('WelcomeHome')}>
-            <Text style = {styles.text.skip}>Masuk</Text>
+            <Text style = {styles.text.skip}>Skipp >>></Text>
           </TouchableOpacity>
         </View>
     );

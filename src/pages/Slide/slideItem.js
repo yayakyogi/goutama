@@ -5,7 +5,6 @@ const SlideItem = ({item}) => {
   const {width} = useWindowDimensions();
   return(
       <View style = {[styles.wrapper.slider, {width}]}>
-          {/* <Image source = {require('../../assets/img/logo.png')} style={styles.wrapper.logo}/> */}
           <Image source={item.images} style={[styles.wrapper.imgslide, {width,resizeMode:'contain'}]}/>
 
           <View style={{flex:0.2}}>
