@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'; 
-import {Splash,Slide,WelcomeHome,Login,Register,} from '../pages';
+import {Splash,Slide,WelcomeHome,Login,Register,User} from '../pages';
 const Stack = createStackNavigator();
 
 const Router = () => {
@@ -27,7 +27,8 @@ const Router = () => {
             }}
         />
         <Stack.Screen 
-            name="Login" component={Login}
+            name="Login" 
+            component={Login}
             options={{
                 headerShown: false,
             }}
@@ -35,6 +36,13 @@ const Router = () => {
         <Stack.Screen 
             name="Register" 
             component={Register}
+            options={{
+                headerShown: false,
+            }}
+        />
+        <Stack.Screen
+            name="User"
+            component={User}
             options={{
                 headerShown: false,
             }}
