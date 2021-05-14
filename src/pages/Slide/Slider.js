@@ -1,5 +1,11 @@
 export default[
   {
+    id: '0',
+    title: 'Selamat Datang',
+    deskripsi: 'Geser ke kiri untuk melihat semua fitur dari GoUTama',
+    images: require('../../assets/img/slider/img-welcome.png'), 
+  },
+  {
     id: '1',
     title: 'Go-Ride',
     deskripsi: 'Nikmati kemudahan mobilitas anda bersama GoUTama',
