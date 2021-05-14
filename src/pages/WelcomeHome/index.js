@@ -2,24 +2,30 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {colors} from '../../util';
 
-
 const WelcomeHome = ({navigation}) => {
   return(
     <View style = {styles.wrapper.page}>
-      <Image source = {require('../../assets/img/brand.png')} style = {styles.wrapper.brand}/>
-      <Text style = {styles.text.welcome}>Selamat Datang di</Text>
-      <Image source = {require('../../assets/img/logo.png')} style={styles.wrapper.logo}/>
+      {/* Images Brand */}
+      <Image source = {require('../../assets/img/brand/brand.png')} style = {styles.wrapper.brand}/>
+      {/* Text */}
+      <Text style = {styles.text.welcome}>Permudah semua aktivitas anda bersama</Text>
+      {/* Images Nama Aplikasi */}
+      <Image source = {require('../../assets/img/brand/logo.png')} style={styles.wrapper.logo}/>
+      {/* Button untuk menuju halaman login */}
       <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Login')}>
         <Text style={styles.button.textNavigate}>Login</Text>
       </TouchableOpacity>
+      {/* Text or */}
       <View style = {styles.text.or}>
         <View style = {styles.text.line}></View>
         <Text style={styles.text.atau}>Atau</Text>
         <View style = {styles.text.line}></View>
       </View>
-      <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Login')}>
+      {/* Button untuk menuju halaman register */}
+      <TouchableOpacity style={styles.button.navigate} onPress={() => navigation.navigate('Register')}>
         <Text style={styles.button.textNavigate}>Daftar</Text>
       </TouchableOpacity>
+      {/* Text Copyright */}
       <Text style={styles.text.copyright}>Copyright {'\u00A9'} GoUTama 2021 - All Right Reserved</Text>
     </View>
   );
@@ -47,7 +53,7 @@ const styles = {
   },
   text:{
     welcome:{
-      fontSize:18, 
+      fontSize:14, 
       color: colors.black, 
       opacity: 0.5,
       marginTop:70,
