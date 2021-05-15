@@ -99,11 +99,11 @@ const styles = {
       alignItems: 'center',
       justifyContent: 'center',
       width: 300,
-      height: 40,
+      height: 45,
       borderRadius:50,
       backgroundColor: colors.primary,
       fontWeight: 'bold',
-      marginTop: 40,
+      marginTop: 30,
     },
     buttonText:{
       color: colors.white,
