@@ -53,7 +53,7 @@ const styles = {
   },
   text:{
     skip:{
-      fontSize:18,
+      fontSize:12,
       textAlign: 'center',
       color: colors.white,
     },
@@ -62,8 +62,8 @@ const styles = {
     skip:{
       alignItems: 'center',
       justifyContent: 'center',
-      width: 300,
-      height: 50,
+      width: 150,
+      height: 30,
       borderRadius:50,
       backgroundColor: colors.primary,
       marginBottom: 30,
