@@ -5,7 +5,7 @@ import {logo, imgNotifikasi, imgUser} from '../../../assets/img';
 const Header = ({navigation}) => {
   return(
     <View style = {styles.wrapper.header}>
-    <TouchableOpacity onPres={() => navigation.navigate('Login')}>
+    <TouchableOpacity onPress={() => navigation.navigate('Login')}>
       <Image source = {logo} style = {styles.wrapper.logo}/>
     </TouchableOpacity>
       <View style={styles.wrapper.headerMenu}>

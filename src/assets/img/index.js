@@ -24,10 +24,11 @@ import imgSimpanPinjam from './dashboard/money-saving.png'; // image simpan pinj
 import imgBtnHome from './dashboard/home.png'; // image home
 import imgBtnMsg from './dashboard/mail-inbox-app.png'; // image messages
 import imgBtnUser from './dashboard/user.png'; // image user
-import imgPromo1 from './dashboard/ease-payment.png'; // image promo 1
+import imgPromo1 from './dashboard/easepayment.jpg'; // image promo 1
+import imgPromo2 from './dashboard/img-promo2.png'; // image promo 2
 
 export {
     brand,logo,logoBulat,
     backButton,imgLogin,imgRegister,
-    imgNotifikasi,imgUser,imgWallet,imgTambahSaldo,imgHistory,imgGiftBox,imgGoRide,imgDelivery,imgPayment,imgTopUp,imgTagihan,imgSimpanPinjam,imgBtnHome,imgBtnMsg,imgBtnUser,imgPromo1,
+    imgNotifikasi,imgUser,imgWallet,imgTambahSaldo,imgHistory,imgGiftBox,imgGoRide,imgDelivery,imgPayment,imgTopUp,imgTagihan,imgSimpanPinjam,imgBtnHome,imgBtnMsg,imgBtnUser,imgPromo1,imgPromo2,
 };

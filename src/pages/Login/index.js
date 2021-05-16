@@ -66,9 +66,9 @@ const styles = {
     login:{
       alignItems: 'center',
       marginTop: 10,
+      flex: 1,
     },
     groupLogin:{
-      paddingVertical:5,
       width: 330,
     },
   },
@@ -80,23 +80,23 @@ const styles = {
     },
     label:{
       fontSize: 15,
-      marginTop: 10,
+      marginTop: 15,
       textAlign: 'left',
     },
     formInput:{
-      paddingTop: 10,
+      paddingTop: 5,
       paddingBottom: 2,
       borderBottomWidth: 0.5,
     },
     buttonLogin:{
       alignItems: 'center',
       justifyContent: 'center',
-      width: 300,
-      height: 45,
-      borderRadius:50,
+      width: 330,
+      height: 40,
+      borderRadius:10,
       backgroundColor: colors.primary,
       fontWeight: 'bold',
-      marginTop: 40,
+      marginTop: 30,
     },
     buttonText:{
       color: colors.white,
@@ -127,8 +127,8 @@ const styles = {
       alignItems: 'center',
     },
     imgLogin:{
-      width: 300,
-      height: 200,
+      width: 280,
+      height: 180,
       marginTop: 70,
       marginBottom: 30,
     },

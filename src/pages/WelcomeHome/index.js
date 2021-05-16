@@ -50,8 +50,8 @@ const styles = {
     logo:{
       marginBottom: 50,
       marginTop: -10,
-      width: 300, 
-      height: 100,
+      width: 270, 
+      height: 80,
     },
   },
   text:{
@@ -88,14 +88,14 @@ const styles = {
       alignItems: 'center',
       justifyContent: 'center',
       width: 270,
-      height: 45,
+      height: 40,
       borderRadius:50,
       backgroundColor: colors.primary,
       fontWeight: 'bold',
     },
     textNavigate:{
       color: colors.white,
-      fontSize:18,
+      fontSize:16,
       fontWeight: 'bold',
     },
   },

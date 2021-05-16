@@ -75,7 +75,6 @@ const styles = {
       marginTop: 10,
     },
     groupLogin:{
-      paddingVertical:5,
       width: 330,
     },
   },
@@ -87,20 +86,20 @@ const styles = {
     },
     label:{
       fontSize: 15,
-      marginTop: 10,
+      marginTop: 15,
       textAlign: 'left',
     },
     formInput:{
-      paddingTop: 10,
+      paddingTop: 5,
       paddingBottom: 2,
       borderBottomWidth: 0.5,
     },
     buttonLogin:{
       alignItems: 'center',
       justifyContent: 'center',
-      width: 300,
-      height: 45,
-      borderRadius:50,
+      width: 330,
+      height: 40,
+      borderRadius:10,
       backgroundColor: colors.primary,
       fontWeight: 'bold',
       marginTop: 30,
