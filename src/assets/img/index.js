@@ -23,7 +23,7 @@ import imgTagihan from './dashboard/bill.png'; // image bill
 import imgSimpanPinjam from './dashboard/money-saving.png'; // image simpan pinjam
 import imgBtnHome from './dashboard/home.png'; // image home
 import imgBtnMsg from './dashboard/mail-inbox-app.png'; // image messages
-import imgBtnUser from './dashboard/user.png'; // image user
+import imgBtnUser from './dashboard/user-1.png'; // image user
 import imgPromo1 from './dashboard/easepayment.jpg'; // image promo 1
 import imgPromo2 from './dashboard/img-promo2.png'; // image promo 2
 
