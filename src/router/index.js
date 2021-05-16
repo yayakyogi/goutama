@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack'; 
-import {Splash,Slide,WelcomeHome,Login,Register,User} from '../pages';
+import {Splash,Slide,WelcomeHome,Login,Register,User,TambahSaldo} from '../pages';
 const Stack = createStackNavigator();
 
 const Router = () => {
@@ -43,6 +43,13 @@ const Router = () => {
         <Stack.Screen
             name="User"
             component={User}
+            options={{
+                headerShown: false,
+            }}
+        />
+        <Stack.Screen
+            name="TambahSaldo"
+            component={TambahSaldo}
             options={{
                 headerShown: false,
             }}

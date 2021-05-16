@@ -5,5 +5,6 @@ export const colors = {
     white: '#ffffff',
     black: '#000000',
     link: '#0500FF',
-    disable: '#bdc3c7',
+    disable: '#ecf0f1',
+    promo: '#70A1FF',
 }

@@ -1,22 +1,24 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import {logo} from '../../../assets/img';
+import {logo, imgNotifikasi, imgUser} from '../../../assets/img';
 
-const Header = () => {
+const Header = ({navigation}) => {
   return(
     <View style = {styles.wrapper.header}>
+    <TouchableOpacity onPres={() => navigation.navigate('Login')}>
       <Image source = {logo} style = {styles.wrapper.logo}/>
+    </TouchableOpacity>
       <View style={styles.wrapper.headerMenu}>
         <TouchableOpacity>
           <Image 
             style = {styles.wrapper.imgNotifikasi}
-            source = {require('../../../assets/img/dashboard/bell.png')}
+            source = {imgNotifikasi}
           />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
             style = {styles.wrapper.imgUser}
-            source = {require('../../../assets/img/dashboard/avatar.png')}
+            source = {imgUser}
           />
         </TouchableOpacity>
       </View>
