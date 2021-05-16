@@ -9,13 +9,6 @@ import {
 } 
 from '../../assets/img';
 
-const Klik = ({navigation}) => {
-  return(
-    <TouchableOpacity onPress={() => navigation.navigate('TambahSaldo')}>
-            <Text>Klik</Text>
-          </TouchableOpacity>
-  )
-}
 const User = () => {
   return(
       <View style={styles.dashboard}>
@@ -26,6 +19,7 @@ const User = () => {
             <InformasiMenu/>
           </View>
           <View style = {{backgroundColor:colors.disable, height:10,marginTop:30}}/>
+          
           {/* Menu utama */}
             <Text style = {{fontSize: 15, fontWeight: 'bold', marginLeft: 20,marginTop:10,}}>Menu Utama</Text>
             <View style = {styles.menu}>
@@ -60,27 +54,29 @@ const User = () => {
                   <Text style = {styles.menuTitle}>E-Simpan Pinjam</Text>
                 </View>
             </View>
+             {/* Akhir Menu utama */}
             <View style = {{backgroundColor:colors.disable, height:10,marginTop:10}}/>
+            
             {/* Promo Menu */}
             <View style = {styles.promoTitle}>
                 <Text style = {{fontSize: 15, fontWeight: 'bold'}}>Yang menarik di GoUTama</Text>
                 <Text style = {{fontSize: 10, fontWeight: '200', color: colors.link}}>Lihat lainnya >></Text>
               </View>
             <ScrollView horizontal style = {{flexDirection: 'row', marginLeft: 20,}} showsHorizontalScrollIndicator={false}>
-            <View style = {styles.menuPromo}>
-                <Image source = {imgPromo1} style = {styles.imgPromo}/>
-                <View style = {styles.captionPromo}>
-                  <Text style = {styles.capsTitle}>
-                    Banyak Pilihan Cara Transaksi Pembayaran
-                  </Text>
-                  <Text style = {styles.capsSubTitle}>
-                    Semua bisa dilakukan dengan <Text style = {{fontWeight: 'bold'}}>GoUTama</Text>
-                  </Text>
-                  <View style = {styles.capsBtn}>
-                    <Text style = {{fontSize: 10, fontWeight: 'bold', color: colors.white}}>Coba Sekarang</Text>
-                  </View>
+              <View style = {styles.menuPromo}>
+                  <Image source = {imgPromo1} style = {styles.imgPromo}/>
+                  <View style = {styles.captionPromo}>
+                    <Text style = {styles.capsTitle}>
+                      Banyak Pilihan Cara Transaksi Pembayaran
+                    </Text>
+                    <Text style = {styles.capsSubTitle}>
+                      Semua bisa dilakukan dengan <Text style = {{fontWeight: 'bold'}}>GoUTama</Text>
+                    </Text>
+                    <View style = {styles.capsBtn}>
+                      <Text style = {{fontSize: 10, fontWeight: 'bold', color: colors.white}}>Coba Sekarang</Text>
+                    </View>
+                </View>
               </View>
-            </View>
               <View style = {styles.menuPromo}>
                 <Image source = {imgPromo1} style = {styles.imgPromo}/>
                 <View style = {styles.captionPromo}>
@@ -93,9 +89,10 @@ const User = () => {
                   <View style = {styles.capsBtn}>
                     <Text style = {{fontSize: 10, fontWeight: 'bold', color: colors.white}}>Coba Sekarang</Text>
                   </View>
-              </View>
+                </View>
               </View>
             </ScrollView>
+            {/* Akhir Promo Menu */}
 
         </View>
         </ScrollView>
