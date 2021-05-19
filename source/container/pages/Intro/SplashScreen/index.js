@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View , Text, Image, StyleSheet} from 'react-native';
+import {View , Text, Image, StyleSheet, StatusBar} from 'react-native';
 import {brand} from '../../../../assets';
 import {colors} from '../../../../util';
 
@@ -11,7 +11,10 @@ const SplashScreen =  ({navigation}) => {
   });
   return(
       <View style = {styles.SplashScreen}>
-          <Image source = {brand} style = {styles.imgSplash}/>
+        <StatusBar
+          backgroundColor='#1E3799'
+        />
+        <Image source = {brand} style = {styles.imgSplash}/>
       </View>
   );
 };

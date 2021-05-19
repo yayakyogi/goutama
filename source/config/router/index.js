@@ -1,55 +1,25 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack'; 
-import {SplashScreen, Slide, WelcomeHome, Login, Register,ResetPassword,Dashboard} from '../../container/pages';
+import { createStackNavigator } from '@react-navigation/stack';
+import {ButtomTabNavigator, IntroPages} from '../../container/navigation';
 
-const Stack = createStackNavigator();
+const Main = createStackNavigator();
 
 const Router = () => {
   return(
-    <Stack.Navigator>
-        <Stack.Screen 
-            name="SplashScreen" component={SplashScreen}
-            options={{
-                headerShown: false,
-            }}
+    <Main.Navigator>
+        <Main.Screen 
+          name="Intro" component={IntroPages} 
+          options={{
+            headerShown: false,
+          }}
+          />
+        <Main.Screen
+          name="Dashboard" component={ButtomTabNavigator}
+          options={{
+            headerShown: false,
+          }}
         />
-        <Stack.Screen 
-            name="Slide" component={Slide}
-            options={{
-                headerShown: false,
-            }}
-        />
-        <Stack.Screen 
-            name="WelcomeHome" component={WelcomeHome}
-            options={{
-                headerShown: false,
-            }}
-        />
-        <Stack.Screen 
-            name="Login" component={Login}
-            options={{
-                headerShown: false,
-            }}
-        />
-        <Stack.Screen 
-            name="Register" component={Register}
-            options={{
-                headerShown: false,
-            }}
-        />
-        <Stack.Screen 
-            name="ResetPassword" component={ResetPassword}
-            options={{
-                headerShown: false,
-            }}
-        />
-        <Stack.Screen 
-            name="Dashboard" component={Dashboard}
-            options={{
-                headerShown: false,
-            }}
-        />
-    </Stack.Navigator>
+    </Main.Navigator>
   )
 }
 

@@ -2,7 +2,8 @@ import React from 'react';
 import {View, Text, ScrollView, Image, TouchableOpacity, StyleSheet,Button} from 'react-native';
 import {colors} from '../../../util';
 import {Header, BottomNav,InformationMenu,MainMenu,Promomenu} from './Homepage';
-
+import MessagePage from './MessagePage';
+import UserPage from './UserPage';
 const Line = () => {
   return(
     <View style = {{backgroundColor:colors.disable, height:10,marginTop:30}}/>
@@ -24,7 +25,7 @@ const Dashboard = ({navigation}) => {
             />
           </View>
         </ScrollView>
-        <BottomNav/>
+        {/* <BottomNav/> */}
      </View>
   )
 }

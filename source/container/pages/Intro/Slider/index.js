@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {View,Text,Image,FlatList, Animated, TouchableOpacity} from 'react-native';
+import {View,Text,Image,FlatList, Animated, TouchableOpacity,StatusBar} from 'react-native';
 import SlideItem from './slideItem';
 import Slider from './Slider';
 import Paginator from './paginator';
@@ -15,6 +15,9 @@ const Slide = ({navigation}) => {
     }).current;
     return(
         <View style = {styles.wrapper.slider}>
+        <StatusBar
+            backgroundColor='#1E3799'
+          />
           <View style={{flex:3}}>
             <FlatList 
               data={Slider} 

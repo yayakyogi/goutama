@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity,StatusBar} from 'react-native';
 import {colors} from '../../../util';
 import {brand,logo} from '../../../assets';
 import {ButtonWelcomeHome, Copyright} from '../../../components';
@@ -7,6 +7,9 @@ import {ButtonWelcomeHome, Copyright} from '../../../components';
 const WelcomeHome = ({navigation}) => {
   return(
     <View style = {styles.wrapper.page}>
+    <StatusBar
+      backgroundColor='#95a5a6'
+    />
      <Image source = {brand} style = {styles.wrapper.brand}/>
       <Text style = {styles.text.welcome}>Permudah semua aktivitas anda bersama</Text>
       <Image source = {logo} style = {styles.wrapper.logo}/>
