@@ -1,10 +1,14 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
-
-export default function UserPage() {
+import { StyleSheet, Text, View } from 'react-native'
+import BodyMessage from './BodyMessage';
+const MessagePage = () => {
   return (
-    <View>
-      <Text>MessagePage</Text>
+    <View style={{height:'100%',backgroundColor:'#ffffff'}}>
+      <BodyMessage/>
     </View>
   )
 }
+
+export default MessagePage
+
+const styles = StyleSheet.create({})

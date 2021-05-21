@@ -1,8 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Dashboard,UserPage,MessagePage} from '../../pages';
 import {Iconhome,Iconmessage,Iconaccount,} from '../../../assets';
 import {View, Text, Image, StyleSheet} from 'react-native';
+import {Homepage,MessagePage,UserPage} from '../../pages/Dashboard';
 
 const Tab = createBottomTabNavigator();
 const ButtomTabNavigator = () => {
@@ -18,7 +18,7 @@ const ButtomTabNavigator = () => {
       >
       <Tab.Screen 
         name="Beranda" 
-        component={Dashboard}
+        component={Homepage}
         options={{
           tabBarIcon:({focused})=>(
             <View style={{alignItems:'center',justifyContent:'center'}}>

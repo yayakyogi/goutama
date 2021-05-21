@@ -7,10 +7,10 @@ from '../../../../../assets';
 
 const MenuItem = props => {
   return(
-      <View style = {styles.menuItem}>
+      <TouchableOpacity style = {styles.menuItem}>
         <Image source = {props.img} style = {styles.imgMenuItem}/>
         <Text style = {styles.menuTitle}>{props.title}</Text>
-      </View>
+      </TouchableOpacity>
   )
 }
 

@@ -14,7 +14,7 @@ const Router = () => {
           }}
           />
         <Main.Screen
-          name="Dashboard" component={ButtomTabNavigator}
+          name="Homepage" component={ButtomTabNavigator}
           options={{
             headerShown: false,
           }}

@@ -2,20 +2,20 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {logo, imgNotifikasi, imgUser} from '../../../../../assets';
 
-const Header = props => {
+const HeaderDashboard = props => {
   return(
     <View style = {styles.wrapper.header}>
-    <TouchableOpacity onPress={props.link}>
+    <TouchableOpacity onPress={props.linkDashoard}>
       <Image source = {logo} style = {styles.wrapper.logo}/>
     </TouchableOpacity>
       <View style={styles.wrapper.headerMenu}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.linkNotifikasi}>
           <Image 
             style = {styles.wrapper.imgNotifikasi}
             source = {imgNotifikasi}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.linkProfile}>
           <Image
             style = {styles.wrapper.imgUser}
             source = {imgUser}
@@ -60,4 +60,4 @@ const styles = {
   },
 };
 
-export default Header;
+export default HeaderDashboard;

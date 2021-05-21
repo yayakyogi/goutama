@@ -8,7 +8,6 @@ const MenuPromo = props => {
     <View style = {{
         backgroundColor:props.background,
         borderRadius: 5,
-        padding: 5,
         marginBottom: 20, 
         marginRight: 10,
       }}>
@@ -24,7 +23,7 @@ const MenuPromo = props => {
               {props.brand}
             </Text>
           </Text>
-            <View style = {{
+            <TouchableOpacity style = {{
                   backgroundColor:props.bgBtn, width: 105,
                   height: 20,
                   borderRadius: 50,
@@ -32,7 +31,7 @@ const MenuPromo = props => {
                   justifyContent: 'center',
               }}>
               <Text style = {{fontSize: 10, fontWeight: 'bold', color: colors.white}}>Coba Sekarang</Text>
-            </View>
+            </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -47,20 +46,20 @@ const Promomenu = props=> {
       </View>
       <ScrollView horizontal style = {{flexDirection: 'row', marginLeft: 20,}} showsHorizontalScrollIndicator={false}>
         <MenuPromo 
-          background = {colors.promo}
-          img = {imgPromo1} 
-          titlePromo = "Banyak Pilihan Cara Transaksi Pembayaran"
-          subTitlePromo = "Semua bisa dilakukan dengan"
-          brand = "GoUTama"
-          bgBtn = {colors.primary}
-        />
-        <MenuPromo 
           background = {colors.promo2}
           img = {imgPromo2} 
           titlePromo = "Banyak Pilihan Cara Transaksi Pembayaran"
           subTitlePromo = "Semua bisa dilakukan dengan"
           brand = "GoUTama"
           bgBtn = {colors.success}
+        />
+        <MenuPromo 
+          background = {colors.promo}
+          img = {imgPromo1} 
+          titlePromo = "Banyak Pilihan Cara Transaksi Pembayaran"
+          subTitlePromo = "Semua bisa dilakukan dengan"
+          brand = "GoUTama"
+          bgBtn = {colors.primary}
         />
       </ScrollView>
     </View>
@@ -70,7 +69,7 @@ const Promomenu = props=> {
 const styles = StyleSheet.create({
   menuPromo:{
     marginRight: 10,
-    width: 325,
+    width: 290,
     height: 150,
     paddingHorizontal: 10,
     flexDirection: 'row',
@@ -85,30 +84,25 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   imgPromo:{
-    width: 120,
+    flex:0.4,
     height: 110,
     marginRight: 10,
   },
   captionPromo:{
-    width: 160,
+    flex:0.6,
+    marginLeft:10,
   },
   capsTitle:{
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: 'bold',
     color: colors.white,
   },
   capsSubTitle:{
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '100',
     color: colors.white,
     marginVertical: 10,
   },
-  capsBtn:{
-    width: 105,
-    height: 20,
-    borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
+});
+
 export default Promomenu;

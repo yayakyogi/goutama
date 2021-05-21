@@ -43,7 +43,7 @@ const Login = ({navigation}) => {
             <FormInput label = "Username" placeholder = "Masukan username anda"/>
             <FormInput label = "Password" placeholder = "Masukan password anda"/>
           </SafeAreaView>
-          <Btn btnStyles={styles.groupLogin.buttonLogin} Navigation={() => navigation.navigate('Dashboard')} textStyles={styles.groupLogin.buttonText} textBtn="LOGIN"/>
+          <Btn btnStyles={styles.groupLogin.buttonLogin} Navigation={() => navigation.navigate('Homepage')} textStyles={styles.groupLogin.buttonText} textBtn="LOGIN"/>
           <Text style={styles.groupLogin.lupaPassword}>Lupa password?</Text>
           <Btn btnStyles={styles.groupLogin.lupaPassword} Navigation={() => navigation.navigate('ResetPassword')} textStyles={styles.groupLogin.textLupaPw} textBtn="Klik disini"/>
         </View>
@@ -65,19 +65,23 @@ const styles = {
   },
   groupLogin:{
     title:{
-      fontSize: 30,
+      fontSize: 25,
       fontWeight: 'bold',
       opacity: 0.7,
     },
     label:{
-      fontSize: 15,
-      marginTop: 15,
+      fontSize: 13,
+      marginTop: 10,
+      marginBottom:5,
       textAlign: 'left',
     },
     formInput:{
-      paddingTop: 5,
-      paddingBottom: 2,
-      borderBottomWidth: 0.5,
+      paddingVertical: 5,
+      paddingHorizontal:10,
+      borderWidth: 0.5,
+      borderRadius:5,
+      borderColor: colors.disable,
+      backgroundColor: colors.disable,
     },
     buttonLogin:{
       alignItems: 'center',
@@ -120,8 +124,7 @@ const styles = {
     imgLogin:{
       width: 100,
       height: 150,
-      marginTop: 40,
-      marginBottom: 30,
+      marginVertical: 30,
     },
   },
   text:{

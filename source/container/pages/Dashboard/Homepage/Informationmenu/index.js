@@ -17,10 +17,10 @@ const TotalSaldo = () => {
 
 const ImageButton = props => {
   return(
-    <View style = {styles.menuBtnItem}>
+    <TouchableOpacity style = {styles.menuBtnItem}>
         <Image source = {props.image} style = {styles.imgButton}/>
         <Text style = {styles.titleBtn}>{props.title}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
@@ -51,12 +51,14 @@ const MenuButton = ({navigation}) =>{
 
 const InformationMenu = ({navigation}) => {
   return(
-    <View style={styles.bodyMenu}>
-      <TotalSaldo/>
-      <MenuButton/>
+    <View>
       <View style = {styles.menuAbsolute}>
         <Text style={{fontSize:12,color:colors.white,fontWeight: 'bold'}}>Selamat datang, Yayak</Text>
         <Text style={{fontSize:10,color:colors.white}}>Poin kamu : 100 Point</Text>
+      </View>
+      <View style={styles.bodyMenu}>
+        <TotalSaldo/>
+        <MenuButton/>
       </View>
     </View>
   );
@@ -68,12 +70,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.secondary,
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    height: 125,
-    width: 360,
-    borderRadius: 5,
+    height: 100,
+    width:'100%',
+    borderBottomRightRadius: 5,
+    borderBottomLeftRadius: 5,
     paddingHorizontal: 10,
     paddingBottom: 30,
-    marginTop: 20,
   },
   totSaldo:{
     flexDirection: 'row',
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
   menuBtn:{
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: 160,
+    flex:1,
   },
   titleBtn:{
     fontSize: 7,
@@ -104,9 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',alignItems: 'center'
   },
   menuAbsolute:{
-    position: 'absolute',
-    top:0,
-    height:30,width:360,
+    height:30,
     backgroundColor:'#40739e',
     flexDirection:'row',
     justifyContent:'space-between',
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:10,
     borderTopRightRadius: 5,
     borderTopLeftRadius: 5,
+    marginTop:5,
   }
 })
 

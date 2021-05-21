@@ -43,7 +43,7 @@ const ResetPassword = ({navigation}) => {
             <FormInput label = "Email" placeholder = "Masukan email aktif anda"/>
             <FormInput label = "No Telepon" placeholder = "Masukan no handphone anda"/>
           </SafeAreaView>
-          <Btn btnStyles={styles.groupLogin.buttonLogin} Navigation={() => navigation.navigate('User')} textStyles={styles.groupLogin.buttonText} textBtn="RESET PASSWORD"/>
+          <Btn btnStyles={styles.groupLogin.buttonLogin} Navigation={() => navigation.navigate('Login')} textStyles={styles.groupLogin.buttonText} textBtn="RESET PASSWORD"/>
         </View>
       </ScrollView>
   );
@@ -63,12 +63,12 @@ const styles = {
   },
   groupLogin:{
     title:{
-      fontSize: 30,
+      fontSize: 25,
       fontWeight: 'bold',
       opacity: 0.7,
     },
     label:{
-      fontSize: 15,
+      fontSize: 13,
       marginTop: 15,
       textAlign: 'left',
     },
