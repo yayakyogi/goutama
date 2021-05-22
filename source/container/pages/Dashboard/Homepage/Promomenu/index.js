@@ -56,7 +56,7 @@ const Promomenu = props=> {
         <MenuPromo 
           background = {colors.promo}
           img = {imgPromo1} 
-          titlePromo = "Banyak Pilihan Cara Transaksi Pembayaran"
+          titlePromo = "Lakukan semua aktivitas melalui smartphone"
           subTitlePromo = "Semua bisa dilakukan dengan"
           brand = "GoUTama"
           bgBtn = {colors.primary}

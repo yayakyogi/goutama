@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {ButtomTabNavigator, IntroPages} from '../../container/navigation';
+import FIREBASE from '../firebase';
 
 const Main = createStackNavigator();
-
 const Router = () => {
   return(
     <Main.Navigator>

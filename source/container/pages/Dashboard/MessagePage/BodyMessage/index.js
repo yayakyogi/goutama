@@ -19,9 +19,7 @@ const BodyMessage = () => {
   return (
     <View>
       <View style={styles.header}>
-        <TouchableOpacity>
-          <Image source={logo} style={styles.imgLogo}/>
-        </TouchableOpacity>
+        <Image source={logo} style={styles.imgLogo}/>
       </View>
       <View style={styles.body}>
         <ItemMessage
@@ -32,9 +30,9 @@ const BodyMessage = () => {
         />
         <ItemMessage
           imgMsg={imgUser}
-          title="Yayak Yogi"
+          title="Ginantaka"
           messages="lorem ipsum dolor sit amet sloesdk yayak hdfksdsfjgnsjg"
-          time="19.30"
+          time="07.30"
         />
       </View>
     </View>
@@ -46,6 +44,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     marginRight:-2,
     marginLeft:-2,
+    alignItems:'center',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
   },
   imgLogo:{
     width:120,
-    height:30,
+    height:40,
   },
   itemMessage:{
     flexDirection:'row',

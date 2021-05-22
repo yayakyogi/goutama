@@ -1,213 +1,183 @@
-import React from 'react';
-import {View, ScrollView, Text, Image, TextInput, SafeAreaView, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
+import {
+  View,
+  ScrollView,
+  Text,
+  Image,
+  TextInput,
+  SafeAreaView,
+  TouchableOpacity,
+  Alert,
+  StyleSheet,
+} from 'react-native';
 import {colors} from '../../../../util';
-import {logo,imgRegister,backButton} from '../../../../assets';
-import {Copyright} from '../../../../components';
+import {logo, imgRegister, backButton} from '../../../../assets';
+import {InputData} from '../../../../components';
+import FIREBASE from '../../../../config/firebase';
 
-const FormInput = props => {
-  return(
-    <View>
-      <Text style={styles.groupLogin.label}>{props.label}</Text>
-      <TextInput 
-        style={styles.groupLogin.formInput}
-        placeholder = {props.placeholder}
-      />
-    </View>
-  )
+export default class Register extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: '',
+      password: '',
+      passwordConfirm: '',
+      loading:false
+    };
+  }
+
+  onChangeText = (namaState, value) => {
+    this.setState({
+      [namaState]: value,
+    });
+  };
+
+  onSubmit = () => {
+    if(this.state.email && this.state.password && this.state.passwordConfirm)
+    {
+      if(this.state.password == this.state.passwordConfirm)
+      {
+        FIREBASE.auth().createUserWithEmailAndPassword(this.state.email,this.state.password)
+        .then(() => {
+           Alert.alert('Sukses','Berhasil menyimpan data');
+          this.props.navigation.replace('Login');
+        })
+        .catch((error) => {
+          console.log("Error : ",error)
+        })
+      }
+      else{
+        Alert.alert('Peringatan','Password tidak sama silahkan ulangi lagi');
+      }
+    }
+    else{
+      Alert.alert("Peringatan","Semua kolom wajib untuk diisi");
+    }
+  };
+
+  render() {
+    return (
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{backgroundColor: colors.white}}>
+        <View style={styles.login}>
+          <TouchableOpacity
+            style={styles.btnBack}
+            onPress={() => this.props.navigation.replace('WelcomeHome')}>
+            <Image style={styles.imgBack} source={backButton} />
+          </TouchableOpacity>
+          <Image style={styles.logo} source={logo} />
+          <Image style={styles.imgRegister} source={imgRegister} />
+          <SafeAreaView style={styles.groupLogin}>
+            <Text style={styles.title}>REGISTER</Text>
+            <InputData
+              label="Email"
+              placeholder="Masukkan email anda"
+              onChangeText={this.onChangeText}
+              value={this.state.email}
+              namaState="email"
+            />
+            <InputData
+              label="Password"
+              placeholder="Masukkan password anda"
+              onChangeText={this.onChangeText}
+              value={this.state.password}
+              namaState="password"
+              secureTextEntry={true}
+            />
+            <InputData
+              label="Kofirmasi Password"
+              placeholder="Ulangi password anda"
+              onChangeText={this.onChangeText}
+              value={this.state.passwordConfirm}
+              namaState="passwordConfirm"
+              secureTextEntry={true}
+            />
+          </SafeAreaView>
+          <TouchableOpacity
+            style={styles.buttonRegister}
+            onPress={() => this.onSubmit()}>
+            <Text style={styles.buttonText}>DAFTAR</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    );
+  }
 }
 
-const Login = ({navigation}) => {
-  return(
-    <SafeAreaView>
-    <ScrollView showsVerticalScrollIndicator={false} style = {{backgroundColor: colors.white,}}>
-      <View style = {styles.wrapper.login}>
-        <TouchableOpacity style={styles.auth.btnBack} onPress = {() => navigation.replace('WelcomeHome')}><Image style={styles.auth.imgBack}  source={backButton} /></TouchableOpacity>
-        <Image style={styles.auth.logo} source={logo}/>
-        <Image style={styles.auth.imgRegister} source = {imgRegister} />
-        {/* Form Input */}
-        <SafeAreaView style = {styles.wrapper.groupLogin}>
-          <Text style={styles.groupLogin.title}>REGISTER</Text>
-          <FormInput label = "Nama" placeholder = "Masukan nama anda"/>
-          <FormInput label = "Email" placeholder = "Masukan email aktif anda"/>
-          <FormInput label = "No Hp" placeholder = "Masukan nomor handphone anda"/>
-          <FormInput label = "Password" placeholder = "Masukan password anda"/>
-           <FormInput label = "Konfirmasi Password" placeholder = "Ulangi password"/>
-        </SafeAreaView>
-        {/* Button Login */}
-        <TouchableOpacity style={styles.groupLogin.buttonLogin}onPress={() => navigation.navigate('Homepage')}><Text style={styles.groupLogin.buttonText}>DAFTAR</Text></TouchableOpacity>
-        </View>
-    </ScrollView>
-  </SafeAreaView>
-  );
-};
+const styles = StyleSheet.create({
+  login: {
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 30,
+    flex: 1,
+    backgroundColor: colors.white,
+  },
+  groupLogin: {
+    width: 330,
+  },
 
-// const styles = {
-//   wrapper:{
-//     login:{
-//       alignItems: 'center',
-//       paddingTop: 10,
-//       paddingBottom:50,
-//       flex: 1,
-//       backgroundColor: colors.white,
-//     },
-//     groupLogin:{
-//       width: 330,
-//     },
-//   },
-//   groupLogin:{
-//     title:{
-//       fontSize: 20,
-//       fontWeight: 'bold',
-//       opacity: 0.7,
-//     },
-//     label:{
-//       fontSize: 13,
-//       marginTop: 10,
-//       textAlign: 'left',
-//     },
-//     formInput:{
-//       paddingTop: 5,
-//       paddingBottom: 2,
-//       borderBottomWidth: 0.5,
-//     },
-//     buttonLogin:{
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//       width: 330,
-//       height: 40,
-//       borderRadius:10,
-//       backgroundColor: colors.primary,
-//       fontWeight: 'bold',
-//       marginTop: 30,
-//     },
-//     buttonText:{
-//       color: colors.white,
-//       fontSize:15,
-//       fontWeight: 'bold',
-//     },
-//     lupaPassword:{
-//       marginTop:10,
-//       opacity:0.7,
-//     },
-//     textLupaPw:{
-//       color: colors.link,
-//     }
-//   },
-//   auth:{
-//     btnBack:{
-//       position:'absolute',
-//       top:25,
-//       left:25,
-//     },
-//     imgBack:{
-//       width:25,
-//       height:25,
-//     },
-//     logo:{
-//       width:170,
-//       height:50,
-//       alignItems: 'center',
-//     },
-//     imgRegister:{
-//       width: 80,
-//       height: 100,
-//       marginTop: 10,
-//     },
-//   },
-//   text:{
-//     copyright:{
-//       opacity: 0.5,
-//       fontSize: 12,
-//       textAlign: 'center',
-//       marginTop: 50,
-//     },
-//   },
-// };
-const styles = {
-  wrapper:{
-    login:{
-      alignItems: 'center',
-      paddingTop: 10,
-      paddingBottom:30,
-      flex: 1,
-      backgroundColor: colors.white,
-    },
-    groupLogin:{
-      width: 330,
-    },
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    opacity: 0.7,
+    textAlign: 'left',
   },
-  groupLogin:{
-    title:{
-      fontSize: 25,
-      fontWeight: 'bold',
-      opacity: 0.7,
-    },
-    label:{
-      fontSize: 13,
-      marginTop: 10,
-      marginBottom:5,
-      textAlign: 'left',
-    },
-    formInput:{
-      paddingVertical: 5,
-      paddingHorizontal:10,
-      borderWidth: 0.5,
-      borderRadius:5,
-      borderColor: colors.disable,
-      backgroundColor: colors.disable,
-    },
-    buttonLogin:{
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 330,
-      height: 40,
-      borderRadius:10,
-      backgroundColor: colors.primary,
-      fontWeight: 'bold',
-      marginTop: 30,
-    },
-    buttonText:{
-      color: colors.white,
-      fontSize:15,
-      fontWeight: 'bold',
-    },
-    lupaPassword:{
-      marginTop:10,
-      opacity:0.7,
-    },
-    textLupaPw:{
-      color: colors.link,
-    }
+  label: {
+    fontSize: 13,
+    marginTop: 10,
+    marginBottom: 5,
+    textAlign: 'left',
   },
-  auth:{
-    btnBack:{
-      position:'absolute',
-      top:25,
-      left:25,
-    },
-    imgBack:{
-      width:25,
-      height:25,
-    },
-    logo:{
-      width:170,
-      height:50,
-      alignItems: 'center',
-    },
-    imgRegister:{
-      width: 90,
-      height: 130,
-      marginTop: 10,
-      marginBottom: 5,
-    },
+  formInput: {
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    borderWidth: 0.5,
+    borderRadius: 5,
+    borderColor: colors.disable,
+    backgroundColor: colors.disable,
   },
-  text:{
-    copyright:{
-      opacity: 0.5,
-      fontSize: 12,
-      textAlign: 'center',
-      marginTop: 50,
-    },
+  buttonRegister: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 330,
+    height: 45,
+    borderRadius: 10,
+    backgroundColor: colors.primary,
+    fontWeight: 'bold',
+    marginTop: 30,
   },
-};
-export default Login;
+  buttonText: {
+    color: colors.white,
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  lupaPassword: {
+    marginTop: 10,
+    opacity: 0.7,
+  },
+  textLupaPw: {
+    color: colors.link,
+  },
+
+  btnBack: {
+    position: 'absolute',
+    top: 25,
+    left: 25,
+  },
+  imgBack: {
+    width: 25,
+    height: 25,
+  },
+  logo: {
+    width: 170,
+    height: 50,
+    alignItems: 'center',
+  },
+  imgRegister: {
+    width: 150,
+    height: 170,
+    marginVertical: 10,
+  },
+});
